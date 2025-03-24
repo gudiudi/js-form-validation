@@ -1,0 +1,22 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.error {
+	color: #fff;
+	background-color: #990000;
+}
