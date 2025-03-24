@@ -1,5 +1,4 @@
 const form = document.querySelector("form");
-const email = document.querySelector("#email");
 
 const checkValidity = (node, state) => {
 	return node.validity[state];
