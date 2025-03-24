@@ -19,6 +19,10 @@ const showError = (node, msg) => {
 	node.after(errorEl);
 };
 
+const checkPassword = (password, confirmPassword) => {
+	return password === confirmPassword;
+};
+
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 
@@ -35,6 +39,14 @@ form.addEventListener("focusout", (e) => {
 
 	if (!checkValidity(e.target, "valid")) {
 		showError(e.target, e.target.validationMessage);
+	}
+
+	if (e.target.id === "confirm-password") {
+		const passwordField = form.querySelector("#password");
+		const isPasswordMatch = checkPassword(passwordField.value, e.target.value);
+		if (!isPasswordMatch) {
+			showError(e.target, "Password do not match.");
+		}
 	}
 });
 
